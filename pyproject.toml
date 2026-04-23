@@ -1,0 +1,48 @@
+[project]
+name = "stack"
+version = "0.1.0"
+description = "projet multi-package pour analyser facilement des datas"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "edfg-bloomany-api",
+    "edfg-cube-api",
+    "great-tables>=0.21.0",
+    "ipykernel>=7.2.0",
+    "jupyter>=1.1.1",
+    "loguru>=0.7",
+    "matplotlib>=3.10.8",
+    "pandas>=3.0.2",
+    "pyarrow>=24.0.0",
+    "python-dotenv>=1.0",
+    "selenium>=4.43.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0",
+    "ruff>=0.15",
+]
+
+[project.scripts]
+stack = "stack.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+lint.select = ["E", "F", "I", "UP"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.uv.sources]
+blpapi = { index = "bloomberg" }
+edfg-bloomany-api = { git = "https://github.com/EDF-Gestion/edfg-bloomany-api.git" }
+edfg-cube-api = { git = "https://github.com/EDF-Gestion/edfg-cube-api.git" }
+
+[[tool.uv.index]]
+name = "bloomberg"
+url = "https://blpapi.bloomberg.com/repository/releases/python/simple"

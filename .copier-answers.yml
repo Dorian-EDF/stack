@@ -1,0 +1,12 @@
+_commit: v0.1.4
+_src_path: gh:EDF-Gestion/template-python
+author_contact: dorian.deneuville@edf.fr
+author_name: Dorian Deneuville
+package_name: stack
+project_description: projet multi-package pour analyser facilement des datas
+project_name: stack
+project_slug: stack
+python_version: '3.14'
+use_ci: false
+use_dotenv: true
+
